@@ -1,10 +1,8 @@
-﻿
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DependentValidation
 {
-    public class RequiredIfNotEmptyAttribute : DependentPropertyValidationAttribute, IClientModelValidator
+    public class RequiredIfNotEmptyAttribute : DependentPropertyValidationAttribute
     {
         public RequiredIfNotEmptyAttribute(string dependentProperty)
             : base(dependentProperty) { }
@@ -39,13 +37,6 @@ namespace DependentValidation
         public override string DefaultErrorMessage
         {
             get { return "{0} is required due to {1} not being empty."; }
-        }
-
-        public virtual void AddValidation(ClientModelValidationContext context)
-        {
-            MergeAttribute(context.Attributes, "data-val", "true");
-            MergeAttribute(context.Attributes, "data-val-requiredifnotempty", FormatErrorMessage(context.ModelMetadata.GetDisplayName()));
-            MergeAttribute(context.Attributes, "data-val-requiredifnotempty-dependentproperty", DependentProperty.ToString()); ;
         }
     }
 }

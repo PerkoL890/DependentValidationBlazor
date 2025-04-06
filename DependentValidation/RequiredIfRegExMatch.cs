@@ -1,7 +1,4 @@
-﻿
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-
-namespace DependentValidation
+﻿namespace DependentValidation
 {
     public class RequiredIfRegExMatchAttribute : RequiredIfAttribute
     {

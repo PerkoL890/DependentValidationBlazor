@@ -1,5 +1,4 @@
-﻿
-namespace DependentValidation
+﻿namespace DependentValidation
 {
     public class RequiredIfTrueAttribute : RequiredIfAttribute
     {

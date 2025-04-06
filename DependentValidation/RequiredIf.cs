@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DependentValidation
 {
-    public class RequiredIfAttribute : DependentPropertyValidationAttribute, IClientModelValidator
+    public class RequiredIfAttribute : DependentPropertyValidationAttribute
     {
         public Operator Operator { get; private set; }
         public object ExpectedValue { get; private set; }
@@ -49,15 +48,6 @@ namespace DependentValidation
         public override string DefaultErrorMessage
         {
             get { return "{0} is required due to {1} being " + Metadata.ErrorMessage + " {2}"; }
-        }
-
-        public virtual void AddValidation(ClientModelValidationContext context)
-        {
-            MergeAttribute(context.Attributes, "data-val", "true");
-            MergeAttribute(context.Attributes, "data-val-requiredif", FormatErrorMessage(context.ModelMetadata.GetDisplayName()));
-            MergeAttribute(context.Attributes, "data-val-requiredif-dependentproperty", DependentProperty.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-expectedvalue", ExpectedValue.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-operator", Operator.ToString());
         }
     }
 }

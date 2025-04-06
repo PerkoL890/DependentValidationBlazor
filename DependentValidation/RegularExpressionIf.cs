@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace DependentValidation
 {
@@ -44,15 +42,5 @@ namespace DependentValidation
         {
             get { return "{0} must be in the format of {3} due to {1} being " + Metadata.ErrorMessage + " {2}"; }
         }
-        public new void AddValidation(ClientModelValidationContext context)
-        {
-            MergeAttribute(context.Attributes, "data-val", "true");
-            MergeAttribute(context.Attributes, "data-val-requiredif", FormatErrorMessage(context.ModelMetadata.GetDisplayName()));
-            MergeAttribute(context.Attributes, "data-val-requiredif-dependentproperty", DependentProperty.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-expectedvalue", ExpectedValue.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-operator", Operator.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-pattern", Pattern.ToString());
-        }
-
     }
 }

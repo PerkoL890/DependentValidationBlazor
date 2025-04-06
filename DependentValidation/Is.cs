@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace DependentValidation
 {
-    public class IsAttribute : DependentPropertyValidationAttribute, IClientModelValidator
+    public class IsAttribute : DependentPropertyValidationAttribute
     {
         public Operator Operator { get; private set; }
         public bool PassOnNull { get; set; }
@@ -45,16 +44,6 @@ namespace DependentValidation
         public override string DefaultErrorMessage
         {
             get { return "{0} must be " + Metadata.ErrorMessage + " {1}."; }
-        }
-
-
-        public void AddValidation(ClientModelValidationContext context)
-        {
-            MergeAttribute(context.Attributes, "data-val", "true");
-            MergeAttribute(context.Attributes, "data-val-requiredif", FormatErrorMessage(context.ModelMetadata.GetDisplayName()));
-            MergeAttribute(context.Attributes, "data-val-requiredif-dependentproperty", DependentProperty.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-passonnull", PassOnNull.ToString());
-            MergeAttribute(context.Attributes, "data-val-requiredif-operator", Operator.ToString());
         }
     }
 }
