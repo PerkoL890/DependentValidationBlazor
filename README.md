@@ -40,6 +40,8 @@ I did not prefer this workaround, so I removed all references to MVC from the pa
 
 ### Usage Example for Blazor
 You can use DependentValidation in your Blazor WebAssembly application to add validation attributes based on other properties in your model. Here's an example of how you can apply the RequiredIfEmpty attribute:
+
+```csharp
 public class MyEntity
 {
     [DependentValidation.RequiredIfEmpty("Description")]
@@ -47,6 +49,8 @@ public class MyEntity
 
     public string Description { get; set; }
 }
+```
+
 This example adds the RequiredIfEmpty attribute to the Name property, making it required if the Description property is empty.
 
 Once you’ve added this package (either as a NuGet package or as a local class library) and referenced it in your Blazor project, it should work out of the box.
