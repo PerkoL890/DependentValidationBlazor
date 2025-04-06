@@ -56,10 +56,12 @@ This example adds the RequiredIfEmpty attribute to the Name property, making it 
 Once you’ve added this package (either as a NuGet package or as a local class library) and referenced it in your Blazor project, it should work out of the box.
 Example Form in Blazor:
 
+```html
 <SfDataForm @ref="form" Model="myEntity" OnUpdate="OnFormUpdate">
     <SfDataForm>
 </SfDataForm>
-(Should have the same functionality with <EditForm>)
+```
+(Should have the same functionality with standard EditForm)
 This example uses Syncfusion's DataForm component to create a form that will automatically validate the Name field if the Description field is empty.
 ### What's Changed in This Fork?
 
