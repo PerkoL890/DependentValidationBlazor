@@ -24,9 +24,9 @@ The new attributes are the following:
 --- 
 
 ### Installation
-
-Note: Currently, the package is not available on NuGet.
-
+``` powershell
+Install-Package DependentValidationBlazor
+```
 ### Changes for Blazor WebAssembly (WASM) Compatibility
 
 This package was originally designed with MVC in mind and included client-side validation features. However, these MVC-specific features were not needed for Blazor WebAssembly applications. The original MVC dependencies caused conflicts with Blazor, specifically due to references to Microsoft.AspNetCore.Mvc.ApplicationParts. These caused the following error:
