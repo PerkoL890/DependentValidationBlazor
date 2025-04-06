@@ -58,8 +58,6 @@ Example Form in Blazor:
 
 ```html
 <SfDataForm @ref="form" Model="myEntity" OnUpdate="OnFormUpdate">
-    <SfDataForm>
-</SfDataForm>
 ```
 (Should have the same functionality with standard EditForm)
 This example uses Syncfusion's DataForm component to create a form that will automatically validate the Name field if the Description field is empty.
