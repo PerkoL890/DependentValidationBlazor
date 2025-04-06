@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Angelo Rotta</Authors>
+    <Authors>Luka Perko</Authors>
     <Company />
     <Description>
-      DependentValidation is a netstandard2.0 library that extends the System.ComponentModel.DataAnnotations with conditional attributes based on another property of the validated object.
-
+      DependentValidationBlazor is a netstandard2.0 library that extends the System.ComponentModel.DataAnnotations with conditional attributes based on another property of the validated object.
+      Originaly made by Angelo Rotta, this library is a fork of the original project that was made to be compatible with Blazor.
       The new attributes are the following:
 
       - RequiredIf
@@ -27,8 +27,19 @@
       - NotEqualTo
     </Description>
     <PackageTags>validation, dependent, conditional, requiredif, greaterthan, lessthan</PackageTags>
-    <Version>1.2.2</Version>
+	<RepositoryUrl>https://github.com/PerkoL890/DependentValidationBlazor</RepositoryUrl>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
   </PropertyGroup>
+
+  <PropertyGroup>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
