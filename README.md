@@ -73,10 +73,10 @@ No need for workarounds: The workaround <GenerateMvcApplicationPartsAssemblyAttr
 
 This makes the package more lightweight and suitable for Blazor applications where you don’t need client-side validation, and you only need validation based on other properties within the model.
 
-License
+### License
 This project is open-source under the MIT License. See the LICENSE file for more details.
 
-Original Project Information
+### Original Project Information
 This project is based on the Foolproof library, which was originally created for ASP.NET MVC projects. It provides a simplified set of validation attributes for those who require conditional validation rules without the complexity of full-fledged validation libraries.
 
 The original author created this library to fill a gap in validation for .NET Core applications, and I’ve forked it to support Blazor.
