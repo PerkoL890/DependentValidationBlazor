@@ -31,8 +31,7 @@ Install-Package DependentValidationBlazor
 
 This package was originally designed with MVC in mind and included client-side validation features. However, these MVC-specific features were not needed for Blazor WebAssembly applications. The original MVC dependencies caused conflicts with Blazor, specifically due to references to Microsoft.AspNetCore.Mvc.ApplicationParts. These caused the following error:
 The type or namespace name 'ApplicationPartAttribute' does not exist in the namespace 'Microsoft.AspNetCore.Mvc.ApplicationParts'
-The workaround
-While it was possible to bypass the error by adding the following to the .csproj file:
+While it was possible to bypass the error by adding the following workaround to the .csproj file:
 
 ```
 <PropertyGroup>
