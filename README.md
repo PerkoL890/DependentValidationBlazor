@@ -33,9 +33,13 @@ This package was originally designed with MVC in mind and included client-side v
 The type or namespace name 'ApplicationPartAttribute' does not exist in the namespace 'Microsoft.AspNetCore.Mvc.ApplicationParts'
 The workaround
 While it was possible to bypass the error by adding the following to the .csproj file:
+
+```
 <PropertyGroup>
     <GenerateMvcApplicationPartsAssemblyAttributes>false</GenerateMvcApplicationPartsAssemblyAttributes>
 </PropertyGroup>
+```
+
 I did not prefer this workaround, so I removed all references to MVC from the package entirely. This modification ensures that the package is suitable for Blazor WASM and works out of the box without the need for MVC or client-side validation.
 
 ### Usage Example for Blazor
@@ -44,7 +48,7 @@ You can use DependentValidation in your Blazor WebAssembly application to add va
 ```csharp
 public class MyEntity
 {
-    [DependentValidation.RequiredIfEmpty("Description")]
+    [DependentValidationBlazor.RequiredIfEmpty("Description")]
     public string Name { get; set; }
 
     public string Description { get; set; }
